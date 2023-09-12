@@ -26,7 +26,18 @@
 
     display: flex;
     justify-content: space-around;
-    height: 200px;
+    align-items: center;
+    height: 100px;
     width: auto;
+    flex-wrap: wrap;
+    background-color: brown;
+    border-radius: 5px;
+    
 
+}
+
+.button {
+
+    width: 60px;
+    height: auto;
 }
