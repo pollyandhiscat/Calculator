@@ -1,6 +1,23 @@
+.page {
+
+    display: flex;
+    justify-content: center;
+}
+
 .calculator-box {
 
     display: flex;
-    justify-content: space-around;
-    border: 5px solid grey;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid silver;
+    width: 500px;
+    height: auto;
+
+}
+
+#display {
+
+    border: 5px solid silver;
+    height: 100px;
+    margin: 0px;
 }
