@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     border: 5px solid silver;
+    border-radius: 10px;
     width: 500px;
     height: auto;
 
@@ -31,7 +32,7 @@
     width: auto;
     flex-wrap: wrap;
     background-color: brown;
-    border-radius: 5px;
+    border-radius: 10px;
     
 
 }
