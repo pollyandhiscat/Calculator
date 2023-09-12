@@ -1,0 +1,6 @@
+.calculator-box {
+
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid grey;
+}
