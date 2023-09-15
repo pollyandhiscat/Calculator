@@ -1,12 +1,24 @@
-function grabElementContent(element) {
+let screenContent = []
 
-    /* Retrieves the content value of a DOM
-    element. */
+function addValueToScreen(value) {
 
-    return element.textContent;
+    /* Adds the given value to the screen of
+    the calculator */
+
+    screenContent.push(value);
+
 }
 
-function activateButtons {
+function clearScreen() {
+
+    const display = document.querySelector('#display');
+    screenContent = [];
+    let content = screenContent.join();
+    display.textContent = content
+
+}
+
+function activateButtons() {
 
     /* Adds event listeners to each button
     on the calculator. This allows the buttons
@@ -14,8 +26,8 @@ function activateButtons {
     */
 
     const button_1 = document.querySelector('#button-1');
+    button_1.addEventListener('click', addValueToScreen(button_1.textContent));
     
-
     const button_2 = document.querySelector('#button-2');
 
     const button_3 = document.querySelector('#button-3');
@@ -34,16 +46,28 @@ function activateButtons {
 
     const button_0 = document.querySelector('#button-0');
 
-    const button_equals = document.querySelector('#button-=');
+    const button_equals = document.querySelector('#button-equals');
 
-    const button_add = document.querySelector('#button-+');
+    const button_add = document.querySelector('#button-add');
 
-    const button_divide = document.querySelector('#button-/');
+    const button_divide = document.querySelector('#button-divide');
 
-    const button_multiply = document.querySelector('#button-*');
+    const button_multiply = document.querySelector('#button-multiply');
 
     const button_clear = document.querySelector('#button-clear');
+    button_clear.addEventListener('click', () => {
+        
+        clearScreen()});
 
     const button_enter = document.querySelector('#button-enter');
+    button_enter.addEventListener('click', () => {
+
+        let content = screenContent.join();
+        const screen = document.querySelector('#calculator-display');
+        screen.textContent = content;
+        
+    });
 
 }
+
+activateButtons();
