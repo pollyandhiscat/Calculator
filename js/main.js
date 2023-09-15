@@ -1,3 +1,11 @@
+function grabElementContent(element) {
+
+    /* Retrieves the content value of a DOM
+    element. */
+
+    return element.textContent;
+}
+
 function activateButtons {
 
     /* Adds event listeners to each button
@@ -6,6 +14,7 @@ function activateButtons {
     */
 
     const button_1 = document.querySelector('#button-1');
+    
 
     const button_2 = document.querySelector('#button-2');
 
@@ -36,7 +45,5 @@ function activateButtons {
     const button_clear = document.querySelector('#button-clear');
 
     const button_enter = document.querySelector('#button-enter');
-
-
 
 }
