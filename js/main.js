@@ -1,5 +1,13 @@
 let screenContent = []
 
+function activateDisplay() {
+
+    const calculator_display = document.querySelector('.calculator-display');
+    let screen_text = document.querySelector('#screen-text');
+    screen_text.textContent = 'Welcome to the calculator!';
+
+}
+
 function addValueToScreen(value) {
 
     /* Adds the given value to the screen of
@@ -11,8 +19,8 @@ function addValueToScreen(value) {
 
 function clearScreen() {
 
-    const screen_text = document.getElementById('#screen-text');
     screenContent = [];
+    let screen_text = document.querySelector('#screen-text');
     screen_text.textContent = '';
 
 }
@@ -110,4 +118,5 @@ function activateButtons() {
 
 }
 
+activateDisplay();
 activateButtons();
