@@ -70,27 +70,12 @@ function doTheMath(result) {
 
     });
 
-    // Now we have a string representing the expression.
+    // result == array
 
-    let answer = 0;
-    let previousCharacters = '';
-    expression.forEach(character => {
-
-        if (character != '+' && character != '-' && character != '*' && character != '/') {
-
-            previousCharacters += character
-        }
-
-        else if (character.isInteger == true) {
-
-
-
-        }
-
-
-    });
-
-
+    console.log(typeof expression);
+    let answer = Function('return ' + expression)();
+    console.log(answer);
+    return answer;
 
 
 }
