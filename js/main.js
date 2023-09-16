@@ -2,7 +2,7 @@ let screenContent = []
 
 function activateDisplay() {
 
-    const calculator_display = document.querySelector('.calculator-display');
+    let calculator_display = document.querySelector('.calculator-display');
     let screen_text = document.querySelector('#screen-text');
     screen_text.textContent = 'Welcome to the calculator!';
 
@@ -13,15 +13,19 @@ function addValueToScreen(value) {
     /* Adds the given value to the screen of
     the calculator */
 
+    let screen_text = document.querySelector('#screen-text');
     screenContent.push(value);
+    screen_text.textContent += value;
+
 
 }
 
 function clearScreen() {
 
-    screenContent = [];
+    let calculator_display = document.querySelector('#calculator-display');
     let screen_text = document.querySelector('#screen-text');
     screen_text.textContent = '';
+    screenContent = [];
 
 }
 
@@ -110,9 +114,19 @@ function activateButtons() {
     const button_enter = document.querySelector('#button-enter');
     button_enter.addEventListener('click', () => {
 
-        let content = screenContent.join();
-        const screen = document.querySelector('#calculator-display');
-        screen.textContent = content;
+        let screen_text = document.querySelector('#screen-text');
+
+        if (screenContent.length == 0) {
+
+            screen_text.textContent = 'Lol, try actually entering stuff noob.';
+
+        }
+
+        else {
+
+            let content = screenContent.join();
+            screen_text.textContent = content;
+        }
         
     });
 
