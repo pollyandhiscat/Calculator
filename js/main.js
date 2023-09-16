@@ -13,6 +13,13 @@ function addValueToScreen(value) {
     /* Adds the given value to the screen of
     the calculator */
 
+    // Check if value is integer or operator.
+    if (value != '+' && value != '-' && value != '*' && value != '/') {
+
+        value = parseFloat(value);
+
+    }
+
     let screen_text = document.querySelector('#screen-text');
     screenContent.push(value);
     screen_text.textContent += value;
@@ -94,7 +101,7 @@ function activateButtons() {
     const button_add = document.querySelector('#button-add');
     button_add.addEventListener('click', () =>{
         
-        addValueToScreen(button_1.textContent)});
+        addValueToScreen(button_add.textContent)});
 
     const button_divide = document.querySelector('#button-divide');
     button_divide.addEventListener('click', () =>{
