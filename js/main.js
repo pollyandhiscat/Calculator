@@ -72,9 +72,7 @@ function doTheMath(result) {
 
     // result == array
 
-    console.log(typeof expression);
     let answer = Function('return ' + expression)();
-    console.log(answer);
     return answer;
 
 
