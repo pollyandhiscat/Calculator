@@ -13,6 +13,17 @@ function addValueToScreen(value) {
     /* Adds the given value to the screen of
     the calculator */
 
+    /* Check if the welcome message is still there. If it is, we want to clear the screen so that
+     only the user input displays.
+     */
+
+    let screen_text = document.querySelector('#screen-text');
+    if (screen_text.textContent == 'Welcome to the calculator!') {
+
+        screen_text.textContent = '';
+
+    }
+
     // Check if value is integer or operator.
     if (value != '+' && value != '-' && value != '*' && value != '/') {
 
@@ -20,7 +31,6 @@ function addValueToScreen(value) {
 
     }
 
-    let screen_text = document.querySelector('#screen-text');
     screenContent.push(value);
     screen_text.textContent += value;
 
@@ -156,7 +166,21 @@ function activateButtons() {
     const button_equals = document.querySelector('#button-equals');
     button_equals.addEventListener('click', () => {
 
-        addValueToScreen(button_equals.textContent)
+        let screen_text = document.querySelector('#screen-text');
+
+        if (screenContent.length == 0) {
+
+            screen_text.textContent = 'Lol, try actually entering stuff noob.';
+
+        }
+
+        else {
+
+            answer = doTheMath(screenContent);
+            screen_text.textContent = answer;
+
+        }
+
     });
 
     const button_add = document.querySelector('#button-add');
@@ -196,8 +220,6 @@ function activateButtons() {
 
         else {
 
-
-            console.log(screenContent);
             answer = doTheMath(screenContent);
             screen_text.textContent = answer;
 
